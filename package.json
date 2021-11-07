@@ -1,0 +1,8 @@
+{
+  "name": "rpc-client",
+  "dependencies": {
+    "@types/webpack": "^5.28.0",
+    "assert": "^2.0.0",
+    "nanoid": "^3.1.30"
+  }
+}
