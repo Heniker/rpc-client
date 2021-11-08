@@ -20,14 +20,12 @@ interface RequestI<ID extends ValidIdT> extends BaseI<ID> {
   params?: JSONValueT
 }
 interface NotificationI extends Exclude<RequestI<never>, 'id'> {}
-interface ResponseI<ID extends ValidIdT> extends BaseI<ID> {}
 
-export interface ResponseSuccess<ID extends ValidIdT, RESULT extends JSONValueT>
-  extends ResponseI<ID> {
+export interface ResponseSuccess<ID extends ValidIdT, RESULT extends JSONValueT> extends BaseI<ID> {
   result: RESULT
 }
 
-export interface ResponseError<ID extends ValidIdT, DATA extends JSONValueT> extends ResponseI<ID> {
+export interface ResponseError<ID extends ValidIdT, DATA extends JSONValueT> extends BaseI<ID> {
   error: {
     code: number
     message: string
